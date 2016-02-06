@@ -1,0 +1,9 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+  	<ion-list>
+      <ion-item ng-repeat="recette in recettes" type="item-text-wrap">
+    	<img src="{{recette.img_image}}"/> <h2>{{recette['titletwo_link/_title']}}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
