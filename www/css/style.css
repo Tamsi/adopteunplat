@@ -1,1 +1,77 @@
-/* Empty. Add your own CSS if you like */
+.tag {
+  display: inline-block;
+  position: relative;
+  margin: 5px 10px 5px 0px;
+  float: left;
+}
+.tag input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  z-index: 300;
+  cursor: pointer;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.tag input[type=checkbox]:hover + label {
+  background: #4f73e7;
+}
+.tag label {
+  padding: 7px 34px 6px 18px;
+  position: relative;
+  z-index: 200;
+  color: white;
+  display: block;
+  border-radius: 16px;
+  background: #305ae3;
+  -webkit-transition: all 0.08s ease-in;
+  transition: all 0.08s ease-in;
+}
+.tag .fa {
+  position: absolute;
+  z-index: 250;
+  right: 11px;
+  top: 9px;
+  color: white;
+  line-height: 0.95;
+}
+.tag .fa-check {
+  display: none;
+  top: 8px;
+  right: 10px;
+  -webkit-transition: all 0.08s ease-in;
+  transition: all 0.08s ease-in;
+}
+.tag input[type=checkbox]:checked + label {
+  background: #f94877;
+  -webkit-animation: flick 0.08s;
+          animation: flick 0.08s;
+}
+.tag input[type=checkbox]:checked ~ .fa-plus {
+  display: none;
+}
+.tag input[type=checkbox]:checked ~ .fa-check {
+  -webkit-animation: flick 0.08s;
+          animation: flick 0.08s;
+  display: block;
+}
+@-webkit-keyframes flick {
+  60% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes flick {
+  60% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

@@ -21,15 +21,22 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('AccountCtrl', function($scope, $http) {
+  $scope.page = 1;
+  $http.get('https://www.foodscience.io/food?page=' + $scope.page).then(function(response){
+      console.log(response);
+      $scope.foods = response.data._embedded.food;
+      $scope.page += 1;
+  });
+
+  $scope.paginate = function(nb_page) {
+    np_page = 'https://www.foodscience.io/food?page=' + $scope.page;
+  }
 })
 
 .controller('TamCtrl', function($scope, $http) {
   $http.get('https://api.import.io/store/connector/7660522a-7b15-4624-aebb-239277b8f11a/_query?input=webpage/url:http%3A%2F%2Fwww.cuisineactuelle.fr%2Fcontent%2Fsearch%3Fsearch%255Btext%255D%3Dcarre%2Bd%2527agneau%26search%255Btypes%255D%3D%26search%255Bsort%255D%3Dscore%26search%255Bdirection%255D%3Ddesc%26search%255Bpage%255D%3D1&&_apikey=f38f1257a3fd41c5aedd02479c9967270169a52c7ae775929827ab0be2c5d4dbdf3ddb6ce9d71af8edfea5601ec9de30bbb5874e665e75f909ebce55aa3a5e517ae19dcb87bcf49d8734da8eafea27dd').then(function(response){
-      console.log(response.data.results);
+      console.log(response);
       $scope.recettes = response.data.results;
   }, function(error){
       //there was an error fetching from the server

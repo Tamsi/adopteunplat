@@ -1,5 +1,13 @@
 <ion-view view-title="Account">
   <ion-content>
-    
+    <div ng-repeat="food in foods">
+      	<div class="tag">
+			<input type="checkbox" />
+			<label for="">{{food.ORIGFDNM}}</label>
+			<i class="fa fa-plus"></i>
+			<i class="fa fa-check"></i> 
+		</div>
+	</div>
+	<button>Next {{page}}</button>
   </ion-content>
 </ion-view>
