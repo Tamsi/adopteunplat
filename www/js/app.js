@@ -49,11 +49,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  .state('tab.tam', {
-    url: '/tam',
+  .state('tab.matching', {
+    url: '/matching',
     views: {
-      'tab-tam': {
-        templateUrl: 'templates/tab-tam.html',
+      'tab-matching': {
+        templateUrl: 'templates/tab-matching.html',
         controller: 'TamCtrl'
       }
     }
