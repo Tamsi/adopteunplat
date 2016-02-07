@@ -21,17 +21,14 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope, $http) {
-  $scope.page = 1;
+.controller('AccountCtrl', function($scope, $http, $stateParams) {
+  $scope.page = $stateParams.page;
+  
   $http.get('https://www.foodscience.io/food?page=' + $scope.page).then(function(response){
       console.log(response);
       $scope.foods = response.data._embedded.food;
-      $scope.page += 1;
+      ++$scope.page;
   });
-
-  $scope.paginate = function(nb_page) {
-    np_page = 'https://www.foodscience.io/food?page=' + $scope.page;
-  }
 })
 
 .controller('TamCtrl', function($scope, $http) {

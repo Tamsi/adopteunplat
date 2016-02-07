@@ -1,5 +1,6 @@
 <ion-view view-title="Account">
   <ion-content>
+  	<a href="#/tab/account/{{page}}">Next page</a>
     <div ng-repeat="food in foods">
       	<div class="tag">
 			<input type="checkbox" />
@@ -8,6 +9,5 @@
 			<i class="fa fa-check"></i> 
 		</div>
 	</div>
-	<button>Next {{page}}</button>
   </ion-content>
 </ion-view>
