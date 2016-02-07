@@ -1,8 +1,10 @@
 <ion-view view-title="Account">
   <ion-content>
   	<a href="#/tab/account/{{page}}">Next page</a>
+  	<button id="red" onclick= "swapColor(this)">je n'aime pas</button>
+  	<button id="blue" onclick="swapColor(this)">j'aime</button>
     <div ng-repeat="food in foods">
-      	<div class="tag">
+      	<div class="tag" onclick='switchColor(this)'>
 			<input type="checkbox" />
 			<label for="">{{food.ORIGFDNM}}</label>
 			<i class="fa fa-plus"></i>

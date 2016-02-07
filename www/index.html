@@ -24,6 +24,23 @@
     <script src="js/services.js"></script>
     <script src="http://code.ionicframework.com/collide/0.0.4/collide.js"></script>
     <script src="http://www.loringdodge.com/files/ionic.tdcards2.js"></script>
+
+    <script type="text/javascript">
+      var color = '#F7F7F7';
+      swapColor = function(element) {
+        document.getElementById('blue').style.backgroundColor='#F7F7F7';
+        document.getElementById('red').style.backgroundColor='#F7F7F7';
+        if(element.id === 'red') {
+          color='#FF6669';
+        } else {
+          color='#333FFF';
+        }
+      }
+
+      switchColor = function(element) {
+        element.children[1].style.backgroundColor = color;
+      }
+    </script>
   </head>
   <body ng-app="starter">
     <!--

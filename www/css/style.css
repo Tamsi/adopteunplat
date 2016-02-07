@@ -107,7 +107,7 @@ td-card#end-card {
   height: 100%;
 }
 .tag input[type=checkbox]:hover + label {
-  background: #4f73e7;
+  background: #999999;
 }
 .tag label {
   padding: 7px 34px 6px 18px;
@@ -116,7 +116,7 @@ td-card#end-card {
   color: white;
   display: block;
   border-radius: 16px;
-  background: #305ae3;
+  background: #AAAAAA;
   -webkit-transition: all 0.08s ease-in;
   transition: all 0.08s ease-in;
 }
@@ -135,8 +135,13 @@ td-card#end-card {
   -webkit-transition: all 0.08s ease-in;
   transition: all 0.08s ease-in;
 }
-.tag input[type=checkbox]:checked + label {
+#tags.red .tag input[type=checkbox]:checked + label {
   background: #f94877;
+}
+#tags.blue .tag input[type=checkbox]:checked + label {
+  background: #333FFF;
+}
+.tag input[type=checkbox]:checked + label {
   -webkit-animation: flick 0.08s;
           animation: flick 0.08s;
 }
